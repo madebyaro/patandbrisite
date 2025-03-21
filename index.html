@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pat & Bri's Irish Wedding</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #e0f2e9;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%2398c379" fill-opacity="0.2" fill-rule="evenodd"%3E%3Cpath d="M0 40L40 0H20L0 20zM40 40V20L20 40z"/%3E%3C/g%3E%3C/svg%3E');
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            max-width: 600px;
+            margin: 0 auto;
+            border: 3px solid #2ecc71;
+        }
+        h1 {
+            color: #e74c3c;
+            font-size: 60px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        p {
+            color: #2c3e50;
+            font-size: 28px;
+            margin: 15px 0;
+        }
+        .clover {
+            color: #27ae60;
+            font-size: 40px;
+            margin: 0 10px;
+        }
+        .festive-line {
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(to right, #27ae60, #e74c3c, #27ae60);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+        .irish-note {
+            font-style: italic;
+            color: #7f8c8d;
+            font-size: 20px;
+        }
+        #countdown {
+            font-size: 24px;
+            color: #27ae60;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pat & Bri</h1>
+        <p>We're Tying the Knot!</p>
+        <p><span class="clover">☘️</span> <span class="clover">☘️</span> <span class="clover">☘️</span></p>
+        <p>Wedding Countdown: <span id="countdown"></span></p>
+        <div class="festive-line"></div>
+        <p class="irish-note">More details coming soon to patandbri.com</p>
+    </div>
+
+    <script>
+        // Set the wedding date
+        const weddingDate = new Date("February 21, 2026 00:00:00").getTime();
+
+        // Update countdown every second
+        const countdownTimer = setInterval(() => {
+            const now = new Date().getTime();
+            const timeLeft = weddingDate - now;
+
+            // Calculate days, hours, minutes, seconds
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            // Display the countdown
+            document.getElementById("countdown").innerHTML = 
+                `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // If the countdown is over
+            if (timeLeft < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById("countdown").innerHTML = "We're Married!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
