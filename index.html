@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pat & Bri's Wedding</title>
+    <title>Pat & Bri's Irish Wedding</title>
     <style>
         body {
             font-family: 'Georgia', serif;
@@ -11,7 +11,10 @@
             margin: 0;
             padding: 20px;
             min-height: 100vh;
-            background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%2398c379" fill-opacity="0.2" fill-rule="evenodd"%3E%3Cpath d="M0 40L40 0H20L0 20zM40 40V20L20 40z"/%3E%3C/g%3E%3C/svg%3E');
+            background-image: url('data:image/svg+xml,%3Csvg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="%2398c379" fill-opacity="0.2" fill-rule="evenodd"%3E%3Cpath d="M0 40L40 0H20L0 20zM40 40V20L20 40z"/%3E%3C/g%3E%3C/svg%3E'),
+                              url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath d="M50 88.9c-15.8 0-31.6-9.5-50-28.4C18.4 41.6 34.2 32.1 50 32.1s31.6 9.5 50 28.4c-18.4 18.9-34.2 28.4-50 28.4zM50 20.5c-8.3 0-15-6.7-15-15s6.7-15 15-15 15 6.7 15 15-6.7 15-15 15z" fill="%23ff9999" fill-opacity="0.1"/%3E%3C/svg%3E');
+            background-size: auto, 200px 200px;
+            background-repeat: repeat, repeat;
         }
         .container {
             text-align: center;
@@ -65,7 +68,7 @@
         <p><span class="clover">☘️</span> <span class="clover">☘️</span> <span class="clover">☘️</span></p>
         <p>Wedding Countdown: <span id="countdown"></span></p>
         <div class="festive-line"></div>
-        <p class="irish-note">More details coming soon to patandbri.com</p>
+        <p class="irish-note">Redirecting to theknot.com...</p>
     </div>
 
     <script>
@@ -93,6 +96,11 @@
                 document.getElementById("countdown").innerHTML = "We're Married!";
             }
         }, 1000);
+
+        // Redirect to The Knot page after 3 seconds
+        setTimeout(() => {
+            window.location.href = "https://www.theknot.com/us/brianna-gillespie-and-patrick-donegan-feb-2026";
+        }, 3000);
     </script>
 </body>
 </html>
